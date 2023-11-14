@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <!-- Require meta tags-->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'bootstrap.min.css' %}"
+    />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+
+    <!-- CSS setting-->
+    <link rel="stylesheet" type="text/css" href="{% static 'navstyle.css' %}" />
+    <title>Moim SSaim</title>
+  </head>
+  <body>
+    <!-- 네비게이션 바-->
+    {% include "navtop.html" %}
+
+    <!-- 기본 템플릿 안에 삽입될 내용 Start-->
+    {% block content %} {% endblock %}
+    <!-- 기본 템플릿 안에 삽입될 내용 End-->
+
+    <!-- 네비게이션 바텀-->
+    {% include "navbottom.html" %}
+    <!-- 자바스크립트 -->
+    {% block script %}
+    {% endblock %}
+  </body>
+</html>

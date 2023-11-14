@@ -1,0 +1,47 @@
+/* reset css */
+a {
+  color: black;
+  text-decoration: none;
+  outline: none;
+}
+a:hover,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+/* 네비게이션 바  */
+#nav-top {
+  border: 1px solid black;
+  width: 90%;
+  margin: 3vw 7vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav-top a {
+  text-decoration: none;
+  font-size: 2vw;
+  margin: 1vw;
+}
+
+#nav-top .navtop-items a {
+  font-size: 1.5vw;
+}
+
+/* nav bottom */
+#nav-bottom{
+  display: flex;
+  width: 90%;
+  border-top: 1px solid rgb(128, 108, 108);
+  margin-top:1vw;
+  justify-content: end;
+  
+}
+
+#nav-bottom .bottom-letter{
+  margin-top: 5vw;
+  
+}
+
+

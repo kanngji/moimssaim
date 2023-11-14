@@ -1,0 +1,69 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %} 
+<div class="container my-3" style="width:50%; justify-content: center;">
+    <img src="{%static 'main.jpg' %}" style="max-width:100%; height: auto;">
+</div>
+
+<div class="container my-5" style="width:70%; justify-content: center;">
+    <h6><b>모임 쌓임의 DATA👨🏻‍💻</b></h6>
+    <div style="display:flex;">
+        <div class="User" style="width: 20%; border-right: 2px solid rgb(171, 161, 161); margin-right: 1%;">
+            <h5 style="color: rgb(94, 241, 114);">USER</h5>
+            <h3 style="text-align: center;">{{total_users}}</h3>
+        </div>
+        <div class="Board" style="width: 20%; border-right: 2px solid rgb(171, 161, 161); margin-right: 1%;">
+            <h5 style="color:#F7E600">BOARD</h5>
+            <h3 style="text-align: center;">{{total_questions}}</h3>
+        </div>
+        <div class="Promotion" style="width: 20%; border-right: 2px solid rgb(171, 161, 161); margin-right: 1%;">
+            <h5 style="color:#E78111">PROMOTION</h5>
+            <h3 style="text-align: center;">3</h3>
+        </div>
+    </div>
+</div>
+
+<!-- 카드섹션 -->
+<div class="container my-5">
+    <div style="margin-left: 15%; margin-top: 10%;">
+        <div style="display: flex; justify-content: center;">
+            <div style="flex-direction: column;">
+                <div style="width:70% ;margin-bottom: 5%;" >
+                    <img src="{% static 'restaurant.jpg' %}" style="max-width: 100%; height: auto;border-radius: 7px;">
+                    <h4 style="margin:5% 0%; text-align: center;">맛집</h4>
+                    <h6>맛집은 우리를 맛, 향 , 그리고 감각의 새로운 세계로 안내해주는 곳이다
+                        음식은 우리를 하나로 연결하며 특별한 순간을 만들어낸다.
+                        맛집에서는 특색이 있는 음식들이 새로운 경험과 만남을 약속합니다.
+                        맛집은 그 자체로 삶의 특별한 순간을 만들어내며, 즐거움과 만족을 더해주는 특별한 공간입니다.</h6>
+                </div>
+                <div style="width:70%">
+                    <img src="{% static 'place.jpg' %}" style="max-width: 100%; height: auto;border-radius: 7px;">
+                    <h4 style="margin:5% 0%;text-align: center;">장소</h4>
+                    <h6>장소는 순간의 마법을 담아내는 시간의 캡슐이다. 그곳은 고요한 숲 속일지, 번쩍이는 도시의 혼란일지, 아니면 파도 소리가 들리는 해안일지 모르지만, 각각의 장소는 우리에게 독특한 이야기를 품고 있다.
+                        장소는 마치 시간의 여행지처럼, 그곳에서만 느낄 수 있는 특별한 기억들을 선사한다. 장소는 우리 감각을 깨우치며, 순간의 아름다움에 눈을 떠게 만든다.</h6>
+                </div>
+
+            </div>
+            <div style="flex-direction: column;">
+                <div style="width:70%; margin-bottom: 10%; background-color: black; height: 18%; border-radius: 7px; text-align: center;">
+                    <span style="color:white; font-size: 3vw;">Cheers <br>to all <br>People</span>
+                    
+                </div>
+                <div style="width:70% ;margin-bottom: 5%;" >
+                    <img src="{% static 'busking.jpg' %}" style="max-width: 100%; height: auto;border-radius: 7px;">
+                    <h4 style="margin:5% 0%;text-align: center;">버스킹</h4>
+                    <h6>버스킹은 도시의 자연스러운 멜로디, 길거리의 솔직한 노래이다. 거리의 소리와 함께 피어나는 그 순간은 마치 도시의 심장 박동 속에서 찾아온 음악적인 소통이다. 버스킹은 예술가가 도시의 풍경과 함께 공유하는 감동의 순간으로, 그 장소마다 색다른 이야기가 펼쳐진다.</h6>
+                </div>
+                <div style="width:70%">
+                    <img src="{% static 'perform.jpg' %}" style="max-width: 100%; height: auto;border-radius: 7px;">
+                    <h4 style="margin:5% 0%;text-align: center;">공연</h4>
+                    <h6>공연은 마치 마음의 축제, 감정의 연화가 무대 위에서 펼쳐지는 예술의 축제이다. 그 곳에서는  감정의 화풀이로 무대를 가득 메우며, 관객들은 마음을 여는 열쇠를 찾아내는 듯한 특별한 경험을 한다. 공연은 마치 감각의 새로운 세계로 초대하는 문, 무대 위에서는 각별한 이야기가 펼쳐진다. 캔버스에 그림을 그리듯, 감정과 열정을 색감으로 표현한다. 그리고 그 색감은 관객들의 마음에 새로운 감동의 문을 열어준다. </h6>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+{% endblock %}

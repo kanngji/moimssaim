@@ -1,0 +1,13 @@
+<div class="container-md" id="nav-top">
+  <a class="logo" href="{% url 'home' %}">모임쌓임</a>
+  <div class="navtop-items">
+    <a class="board" href="{% url 'board:board_list'%}">게시판</a>
+    <a class="promote">홍보</a>
+    {% if user.is_authenticated %}
+    <a class="logout" href="{% url 'common:logout' %}">로그아웃</a>
+    {% else %}
+    <a class="login" href="{% url 'common:login' %}">로그인</a>
+    {% endif %}
+    <a class="qna">고객센터</a>
+  </div>
+</div>

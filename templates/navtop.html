@@ -5,6 +5,7 @@
     <a class="promote">홍보</a>
     {% if user.is_authenticated %}
     <a class="logout" href="{% url 'common:logout' %}">로그아웃</a>
+    <a class="myinfo" href="{% url 'common:myinfo' %}">내 정보</a>
     {% else %}
     <a class="login" href="{% url 'common:login' %}">로그인</a>
     {% endif %}

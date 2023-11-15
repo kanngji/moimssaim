@@ -27,5 +27,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('board/',include('board.urls')),
     path('common/',include('common.urls')),
+    path('promotion/',include('promotion.urls')),
 ]
 

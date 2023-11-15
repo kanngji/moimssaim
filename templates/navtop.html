@@ -2,7 +2,7 @@
   <a class="logo" href="{% url 'home' %}">모임쌓임</a>
   <div class="navtop-items">
     <a class="board" href="{% url 'board:board_list'%}">게시판</a>
-    <a class="promote">홍보</a>
+    <a class="promote" href="{% url 'promotion:promotion_list'%}">홍보</a>
     {% if user.is_authenticated %}
     <a class="logout" href="{% url 'common:logout' %}">로그아웃</a>
     <a class="myinfo" href="{% url 'common:myinfo' %}">내 정보</a>

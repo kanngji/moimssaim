@@ -1,5 +1,28 @@
 {% extends 'base.html'%}
-
+{% load static %}
 {% block content %}
-<h1>프로모션 펭이지</h1>
+<div class="container my-3" style="position: relative;" >
+    <a href="#"class="btn btn-outline-secondary" style="position:absolute;right:5%;">등록</a>
+    <div style="width:100%; display: flex; flex-wrap:wrap;justify-content: center;  margin-bottom: 5%;">
+        
+            {% if promotion_list %}
+            {% for promotion in promotion_list %}
+            <div style="width:21%; height: auto;border: 1px solid #000; margin: 3%; box-sizing: border-box; border-radius: 7px;">
+                <img src="{%static 'busking.jpg' %}" style="max-width: 100%; height:auto">
+                <span style="display:block; text-align: center; ">{{promotion.title}}</span>
+                <span style="display:block; text-align: center; " >{{promotion.category}}</span>
+                <span style="display:block; text-align: center;">{{promotion.meet_date}}</span>
+            </div>
+                
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+<style>
+    span{
+        margin-bottom: 1%;
+    }
+</style>
 {% endblock %}
+

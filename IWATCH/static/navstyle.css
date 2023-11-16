@@ -11,7 +11,7 @@ a:active {
 }
 /* 네비게이션 바  */
 #nav-top {
-  border: 1px solid yellow;
+  border: 1px solid black;
   width: 90%;
   
   display: flex;

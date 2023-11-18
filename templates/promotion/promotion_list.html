@@ -8,19 +8,43 @@
             {% if promotion_list %}
             {% for promotion in promotion_list %}
             
-            <div style="width:21%; height: auto;border: 1px solid #000; margin: 3%; box-sizing: border-box; border-radius: 7px;">
+            <div class='post_detail' data-promotion-id="{{promotion.id}}"style="width:21%; height: auto;border: 1px solid #000; margin: 3%; box-sizing: border-box; border-radius: 7px;">
                 
-                <a href="#" data-toggle="modal" data-target="#promotionModal{{promotion.id}}">
+                
                 <img src="{%static 'busking.jpg' %}" style="max-width: 100%; height:auto">
                 <span style="display:block; text-align: center; ">{{promotion.title}}</span>
                 <span style="display:block; text-align: center; " >{{promotion.category}}</span>
                 <span style="display:block; text-align: center;">{{promotion.meet_date}}</span>
-                </a>
+                
             </div>
            
                 
             {% endfor %}
             {% endif %}
+        </div>
+    </div>
+</div>
+<!-- 모달 창 부분 -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- 모달 내용 -->
+        <div class="modal-content">
+            <!-- 모달 헤더 -->
+            <div class="modal-title">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="data-title"></h4>
+            </div>
+            <!-- 모달 본문 -->
+            <div class="modal-discription">
+                <!-- 모달 내용을 여기에 추가 -->
+                <h5 class="data-discription"></h5>
+                <h5 class="data-category"></h5>
+                <h5 class="data-meet_date"></h5>
+            </div>
+            <!-- 모달 푸터 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+            </div>
         </div>
     </div>
 </div>
@@ -30,6 +54,43 @@
     span{
         margin-bottom: 1%;
     }
+    
 </style>
+<script>
+    // $(document).ready(function(){
+    //     $(".post_detail").click(function(){
+    //         console.log('zmfflr')
+    //         $("#myModal").modal();
+
+    //     });
+
+    // });
+    $(document).ready(function(){
+        $(".post_detail").click(function(){
+            let id = $(this).data('promotion-id')
+
+            $.ajax({
+                type:'GET',
+                url:'/promotion/'+id+'/',
+                success: function(data){
+                    console.log(data)
+                    $("#myModal .data-title").text(data.title);
+                    $("#myModal .data-discription").text(data.discription);
+                    $("#myModal .data-category").text(data.category);
+                    $("#myModal .data-meet_date").text(data.meet_date);
+                },
+                error:function(error){
+                    console.log(error)
+                }
+            })
+            $("#myModal").modal();
+
+        });
+
+    });
+    
+    
+</script>
+
 {% endblock %}
 

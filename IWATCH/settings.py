@@ -146,4 +146,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # media 파일 다루기
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+MEDIA_ROOT = (os.path.join(BASE_DIR,"media"))
+
+# MEDIA_ROOT = BASE_DIR / 'media'  # media 디렉토리의 경로를 설정하세요.

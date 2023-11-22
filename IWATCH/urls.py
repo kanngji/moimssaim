@@ -31,4 +31,6 @@ urlpatterns = [
     path('common/',include('common.urls')),
     path('promotion/',include('promotion.urls')),
 ]
-urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -26,6 +26,7 @@ def promotion_detail(request,promotion_id):
             'discription':promotion.discription,
             'category':promotion.category,
             'meet_date':promotion.meet_date,
+            'imgfile':promotion.imgfile.url if promotion.imgfile else None
             
         }
     except Post.DoesNotExist:

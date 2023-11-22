@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from datetime import timezone , datetime
+from django.shortcuts import redirect, render
 from rest_framework.decorators import api_view, renderer_classes
 from .models import Post
 from rest_framework.response import Response
@@ -33,5 +34,23 @@ def promotion_detail(request,promotion_id):
 
 @api_view(["GET","POST"])
 def promotion_create(request):
-    form = PostForm()
-    return render(request, 'promotion/post_form.html',{'form':form})
+    if request.method=="POST":
+        # form = PostForm(request.POST,request.FILES)
+        # if form.is_valid():
+        #     post = form.save(commit=False)
+        #     post.create_date=datetime.now()
+        #     post.save()
+        #     return redirect('promotion:promotion_list')
+        post = Post()
+        post.title=request.POST['title']
+        post.discription=request.POST['discription']
+        post.create_date=datetime.now()
+        post.meet_date=request.POST['meet_date']
+        post.category=request.POST['category']
+        post.imgfile=request.FILES['imgfile']
+        post.save()
+        return redirect('promotion:promotion_list')
+    else:
+        form = PostForm()
+    context={'form':form}
+    return render(request, 'promotion/post_form.html',context)

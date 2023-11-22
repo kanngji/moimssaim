@@ -7,7 +7,7 @@
         
             {% if promotion_list %}
             {% for promotion in promotion_list %}
-            
+                
             <div class='post_detail' data-promotion-id="{{promotion.id}}"style="width:21%; height: auto;border: 1px solid #000; margin: 3%; box-sizing: border-box; border-radius: 7px;">
                 
                 
@@ -32,14 +32,19 @@
             <!-- 모달 헤더 -->
             <div class="modal-title">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="data-title"></h4>
+                <div style="display: flex;"><h4>제목:</h4><h4 class="data-title"></h4></div>
+                
             </div>
             <!-- 모달 본문 -->
             <div class="modal-discription">
                 <!-- 모달 내용을 여기에 추가 -->
-                <h5 class="data-discription"></h5>
-                <h5 class="data-category"></h5>
-                <h5 class="data-meet_date"></h5>
+                <img id="modal-image" width="700">
+                <div style="display: flex"><h5>설명:</h5><h5 class="data-discription"></h5></div>
+                <div style="display: flex"><h5>카테고리:</h5><h5 class="data-category"></h5></div>
+                <div style="display: flex"><h5>약속날짜:</h5><h5 class="data-meet_date"></h5></div>
+                
+                
+                
             </div>
             <!-- 모달 푸터 -->
             <div class="modal-footer">
@@ -78,6 +83,12 @@
                     $("#myModal .data-discription").text(data.discription);
                     $("#myModal .data-category").text(data.category);
                     $("#myModal .data-meet_date").text(data.meet_date);
+                    if (data.imgfile) {
+                        $("#modal-image").attr("src", data.imgfile);
+                    } else {
+                        console.log("없다")
+                    }
+                    
                 },
                 error:function(error){
                     console.log(error)

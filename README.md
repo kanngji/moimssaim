@@ -37,6 +37,8 @@ DB: Sqlite3
 3. 게시판
 4. 내 정보(마이페이지)
 5. AWS 서버 13.209.95.215
+
+
 [todos]
 1. 내 정보(마이페이지) v
 2. 홍보페이지 (구현중)
@@ -50,6 +52,7 @@ DB: Sqlite3
 - 기본 app들을 연결해줄 app = IWATCH
 - board(게시판) common(로그인,회원가입) promotion(홍보) 이렇게 3개의 app을 IWATCH settings.py에 연결
 - 프론트단을 꾸미기위해 templates 폴더안에 앱별로 풀더관리를 하고 있습니다.
+- local 영역과 배포환경을 구분하여 개발하고 있습니다 local.py , prod.py
 
 [DB]
 - django의 기본내장 db인 sqlite를 사용
